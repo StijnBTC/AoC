@@ -35,5 +35,5 @@ def read_file():
 
 
 if __name__ == "__main__":
-    # day2_1()
+    day2_1()
     day2_2()
