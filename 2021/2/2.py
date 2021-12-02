@@ -2,13 +2,13 @@ def day2_1():
     hpos = 0
     depth = 0
     for line in read_file():
-        trimmed_line = line.rstrip()
-        number = int(line[len(trimmed_line) - 1])
-        if trimmed_line[0] == 'f':
+        line = line.split()
+        number = int(line[1])
+        if line[0] == 'forward':
             hpos += number
-        if trimmed_line[0] == 'd':
+        if line[0] == 'down':
             depth += number
-        if trimmed_line[0] == 'u':
+        if line[0] == 'up':
             depth -= number
     print(hpos * depth)
 
@@ -18,14 +18,14 @@ def day2_2():
     depth = 0
     aim = 0
     for line in read_file():
-        trimmed_line = line.rstrip()
-        number = int(line[len(trimmed_line) - 1])
-        if trimmed_line[0] == 'f':
+        line = line.split()
+        number = int(line[1])
+        if line[0] == 'forward':
             hpos += number
             depth += aim * number
-        if trimmed_line[0] == 'd':
+        if line[0] == 'down':
             aim += number
-        if trimmed_line[0] == 'u':
+        if line[0] == 'up':
             aim -= number
     print(hpos * depth)
 
